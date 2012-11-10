@@ -7,7 +7,8 @@ namespace Solitaire
       static void Main( string[] args )
       {
          var deck = new CardDeck();
-         Console.WriteLine(deck);
+         deck.Shuffle();
+         Console.WriteLine( deck );
          Console.ReadLine();
       }
    }

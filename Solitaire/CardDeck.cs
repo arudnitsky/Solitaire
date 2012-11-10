@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Text;
 
 namespace Solitaire
@@ -16,10 +17,28 @@ namespace Solitaire
       {
          for ( var ii = 1; ii <= 13; ++ii )
          {
-            _cards.Add( new Card(ii, CardSuit.Spades));
-            _cards.Add( new Card(ii, CardSuit.Hearts));
-            _cards.Add( new Card(ii, CardSuit.Clubs));
-            _cards.Add( new Card(ii, CardSuit.Diamonds));
+            _cards.Add( new Card( ii, CardSuit.Spades) );
+            _cards.Add( new Card( ii, CardSuit.Hearts ) );
+            _cards.Add( new Card( ii, CardSuit.Clubs ) );
+            _cards.Add( new Card( ii, CardSuit.Diamonds ) );
+         }
+      }
+
+      // Fisher-Yates shuffle
+      // http://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle
+      // To shuffle an array a of n elements (indices 0..n-1):
+      //    for i from n − 1 downto 1 do
+      //          j ← random integer with 0 ≤ j ≤ i
+      //          exchange a[j] and a[i]
+      public void Shuffle()
+      {
+         var rng = new Random();
+         for (int ii = _cards.Count - 1; ii > 0; --ii )
+         {
+            var jj = rng.Next( ii - 1 );
+            var tmp = _cards[jj];
+            _cards[jj] = _cards[ii];
+            _cards[ii] = tmp;
          }
       }
 
