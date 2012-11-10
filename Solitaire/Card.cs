@@ -1,4 +1,6 @@
-﻿namespace Solitaire
+﻿using System;
+
+namespace Solitaire
 {
    public enum CardSuit { Hearts, Clubs, Diamonds, Spades };
 
@@ -22,7 +24,37 @@
 
       public override string ToString()
       {
-         return string.Format("{0} of {1}", Rank, Suit.ToString());
+         return string.Format("{0} of {1}", CardName(), Suit.ToString());
+      }
+
+      private string CardName()
+      {
+         string cardName;
+         if ( Rank > 1 && Rank < 11 )
+         {
+            cardName = Rank.ToString();
+         }
+         else
+         {
+            switch ( Rank )
+            {
+               case 11:
+                  cardName = "Jack";
+                  break;
+               case 12:
+                  cardName = "Queen";
+                  break;
+               case 13:
+                  cardName = "King";
+                  break;
+               case 1:
+                  cardName = "Ace";
+                  break;
+               default:
+                  throw new ArgumentException( "Rank is not 1 or > 10" );
+            }
+         }
+         return cardName;
       }
    }
 }
