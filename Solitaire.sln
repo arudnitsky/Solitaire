@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Solitaire", "Solitaire\Solitaire.csproj", "{B426A758-D9E6-48D8-AE4B-F1277D5F2F1D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SolitaireTest", "SolitaireTest\SolitaireTest.csproj", "{59371A34-0B2B-40E7-961A-E6D741B79099}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +15,10 @@ Global
 		{B426A758-D9E6-48D8-AE4B-F1277D5F2F1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B426A758-D9E6-48D8-AE4B-F1277D5F2F1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B426A758-D9E6-48D8-AE4B-F1277D5F2F1D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59371A34-0B2B-40E7-961A-E6D741B79099}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59371A34-0B2B-40E7-961A-E6D741B79099}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59371A34-0B2B-40E7-961A-E6D741B79099}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59371A34-0B2B-40E7-961A-E6D741B79099}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
