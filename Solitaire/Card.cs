@@ -17,6 +17,10 @@ namespace Solitaire
 
       public Card( int rank, CardSuit suit )
       {
+         if ( rank < (int)CardRank.Ace || rank > (int)CardRank.King )
+         {
+            throw new ArgumentException( "Invalid card rank" );
+         }
          InitCard( (CardRank) rank, suit );
       }
       
@@ -37,6 +41,15 @@ namespace Solitaire
          {
             Color = CardColor.Black;
          }
+      }
+
+      public bool IsOppositeColor( Card card )
+      {
+         if ( Color == card.Color )
+         {
+            return false;
+         }
+         return true;
       }
 
       public override string ToString()
