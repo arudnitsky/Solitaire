@@ -7,18 +7,18 @@ namespace SolitaireTest
    [TestClass]
    public class PileTest
    {
-      private TableauPile _pile;
+      private Pile _pile;
 
       [TestInitialize]
       public void Setup()
       {
-         _pile = new TableauPile();
+         _pile = new Pile();
       }
 
       [TestMethod]
-      public void TableauPile_NewTableauPile_IsEmpty()
+      public void Pile_NewPile_IsEmpty()
       {
-         var pile = new TableauPile();
+         var pile = new Pile();
          Assert.IsTrue( pile.IsEmpty() );
       }
 

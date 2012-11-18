@@ -7,7 +7,7 @@ namespace Solitaire
    {
       protected readonly Stack<Card> _cards;
 
-      protected Pile()
+      public Pile()
       {
          _cards = new Stack<Card>();
       }
