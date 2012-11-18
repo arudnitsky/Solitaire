@@ -17,6 +17,11 @@ namespace Solitaire
          return _cards.Count == 0;
       }
 
+      public bool IsFull()
+      {
+         return _cards.Count == 13;
+      }
+
       public void AddCard( Card card )
       {
          if ( card == null )

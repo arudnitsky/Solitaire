@@ -52,5 +52,22 @@ namespace SolitaireTest
          var actual = _pile.RemoveCard();
          Assert.AreEqual( actual, expected );
       }
+
+      [TestMethod]
+      public void IsFull_PileIsNotFull_ReturnsFalse()
+      {
+         _pile.AddCard( new Card( CardRank.King, CardSuit.Spades ) );
+         Assert.IsFalse( _pile.IsFull() );
+      }
+
+      [TestMethod]
+      public void IsFull_PileIsFull_ReturnsTrue()
+      {
+         for ( int ii = 1; ii <= 13; ++ii )
+         {
+            _pile.AddCard( new Card( CardRank.Ace, CardSuit.Spades ) );
+         }
+         Assert.IsTrue( _pile.IsFull() );
+      }
    }
 }
