@@ -41,6 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FoundationPile.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Pile.cs" />
     <Compile Include="Card.cs" />
     <Compile Include="CardDeck.cs" />
