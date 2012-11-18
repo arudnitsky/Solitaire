@@ -81,6 +81,13 @@ namespace SolitaireTest
       }
 
       [TestMethod]
+      public void CanAddCard_AddingCardOfMuchLowerRank_CanNotAdd()
+      {
+         _pile.AddCard( _kingOfDiamonds );
+         Assert.IsFalse( _pile.CanAddCard( _jackOfSpades ) );
+      }
+
+      [TestMethod]
       public void CanAddCard_AddingCardOfLowerRank_CanAdd()
       {
          _pile.AddCard( _kingOfDiamonds );

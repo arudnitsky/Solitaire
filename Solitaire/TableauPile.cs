@@ -21,7 +21,7 @@
                return false;
             }
 
-            if ( _cards.Peek().Rank < card.Rank )
+            if ( (int)card.Rank != (int)(_cards.Peek().Rank) - 1 )
             {
                return false;
             }
