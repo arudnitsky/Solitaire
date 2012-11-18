@@ -1,40 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace Solitaire
+﻿namespace Solitaire
 {
-   public class TableauPile
+   public class TableauPile : Pile
    {
-      private readonly Stack<Card> _cards;
-
-      public TableauPile()
-      {
-         _cards = new Stack<Card>();
-      }
-
-      public bool IsEmpty()
-      {
-         return _cards.Count == 0;
-      }
-
-      public void AddCard( Card card )
-      {
-         if ( card == null )
-         {
-            throw new ArgumentNullException();
-         }
-        
-         if ( CanAddCard( card ) )
-         {
-            _cards.Push( card );
-         }
-         else
-         {
-            throw new InvalidOperationException( "Can't add this card" );
-         }
-      }
-
-      public bool CanAddCard( Card card )
+      public override bool CanAddCard( Card card )
       {
          if ( card.Rank == CardRank.King && !IsEmpty() )
          {
@@ -60,16 +28,6 @@ namespace Solitaire
          }
          
          return true;
-      }
-
-      public Card RemoveCard()
-      {
-         if ( IsEmpty( ) )
-         {
-            throw new InvalidOperationException( "Pile is empty" );
-         }
-
-         return _cards.Pop();
       }
    }
 }
