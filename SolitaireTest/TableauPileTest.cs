@@ -32,7 +32,7 @@ namespace SolitaireTest
       }
 
       [TestMethod]
-      public void Constructor_NewTableauPile_IsEmpty()
+      public void TableauPile_NewTableauPile_IsEmpty()
       {
          var pile = new TableauPile();
          Assert.IsTrue( pile.IsEmpty() );
@@ -51,6 +51,22 @@ namespace SolitaireTest
       {
          _pile.AddCard( null );
          Assert.IsFalse( _pile.IsEmpty() );
+      }
+
+      [TestMethod]
+      [ExpectedException( typeof( InvalidOperationException ) )]
+      public void RemoveCard_PileIsEmpty_Throws_InvalidOperationException()
+      {
+         _pile.RemoveCard();
+      }
+
+      [TestMethod]
+      public void RemoveCard_RemoveCard_ReturnsLastCardAdded()
+      {
+         var expected = _kingOfDiamonds;
+         _pile.AddCard( expected );
+         var actual = _pile.RemoveCard();
+         Assert.AreEqual( actual, expected );
       }
 
       [TestMethod]
@@ -107,22 +123,6 @@ namespace SolitaireTest
       {
          _pile.AddCard( _kingOfDiamonds );
          Assert.IsTrue( _pile.CanAddCard( _queenOfSpades ) );
-      }
-
-      [TestMethod]
-      [ExpectedException(typeof(InvalidOperationException))]
-      public void RemoveCard_PileIsEmpty_Throws_InvalidOperationException()
-      {
-         _pile.RemoveCard();
-      }
-
-      [TestMethod]
-      public void RemoveCard_RemoveCard_ReturnsLastCardAdded()
-      {
-         var expected = _kingOfDiamonds;
-         _pile.AddCard( expected );
-         var actual = _pile.RemoveCard();
-         Assert.AreEqual( actual, expected );
       }
    }
 }
