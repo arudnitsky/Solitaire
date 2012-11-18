@@ -17,10 +17,10 @@ namespace Solitaire
       {
          for ( var ii = 1; ii <= 13; ++ii )
          {
-            _cards.Add( new Card( ii, CardSuit.Spades) );
-            _cards.Add( new Card( ii, CardSuit.Hearts ) );
-            _cards.Add( new Card( ii, CardSuit.Clubs ) );
-            _cards.Add( new Card( ii, CardSuit.Diamonds ) );
+            _cards.Add( new Card( ii, CardSuit.Spades, CardOrientation.FaceUp ) );
+            _cards.Add( new Card( ii, CardSuit.Hearts, CardOrientation.FaceUp ) );
+            _cards.Add( new Card( ii, CardSuit.Clubs, CardOrientation.FaceUp ) );
+            _cards.Add( new Card( ii, CardSuit.Diamonds, CardOrientation.FaceUp ) );
          }
       }
 

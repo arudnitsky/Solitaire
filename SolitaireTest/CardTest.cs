@@ -69,5 +69,23 @@ namespace SolitaireTest
          Assert.IsFalse( card1.IsOppositeColor( card2 ) );
          Assert.IsFalse( card3.IsOppositeColor( card4 ) );
       }
+
+      [TestMethod]
+      public void Card_NewCard_OrientationIsFaceDown()
+      {
+         var card1 = new Card( 1, CardSuit.Spades );
+         Assert.AreEqual( CardOrientation.FaceDown, card1.Orientation );
+         var card2 = new Card( CardRank.King, CardSuit.Spades );
+         Assert.AreEqual( CardOrientation.FaceDown, card2.Orientation );
+      }
+
+      [TestMethod]
+      public void Card_NewCardWithSpecifiedOrientation_OrientationIsCorrect()
+      {
+         var card1 = new Card( 1, CardSuit.Spades, CardOrientation.FaceDown );
+         Assert.AreEqual( CardOrientation.FaceDown, card1.Orientation );
+         var card2 = new Card( 1, CardSuit.Spades, CardOrientation.FaceUp );
+         Assert.AreEqual( CardOrientation.FaceUp, card2.Orientation );
+      }
    }
 }
