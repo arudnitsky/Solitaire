@@ -69,11 +69,5 @@ namespace SolitaireTest
          }
          Assert.IsTrue( _pile.IsFull() );
       }
-
-      [TestMethod]
-      public void AddCard_PileIsEmpty_CardIsFaceDown()
-      {
-         
-      }
    }
 }

@@ -50,6 +50,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="CardDeckTest.cs" />
     <Compile Include="CardTest.cs" />
     <Compile Include="FoundationPileTest.cs">
       <SubType>Code</SubType>

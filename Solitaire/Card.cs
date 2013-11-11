@@ -16,7 +16,7 @@ namespace Solitaire
       public CardSuit Suit { get; private set; }
       public CardRank Rank { get; private set; }
       public CardColor Color { get; private set; } 
-      public CardOrientation Orientation { get; set; }
+      public CardOrientation Orientation { get; private set; }
 
       public Card( int rank, CardSuit suit, CardOrientation orientation = CardOrientation.FaceDown )
       {
